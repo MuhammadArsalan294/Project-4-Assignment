@@ -1,0 +1,48 @@
+
+"""
+Milestone #3: Write the game logic
+Write code that maps out all the ways to win the round and prints out the results. When does the user win? How might we check for this? (Note: If you and 
+the computer share the same number, the computer should win since your number wouldn't be higher nor lower.)
+
+
+Welcome to the High-Low Game!
+--------------------------------
+The computer's number is 79
+Your number is 3
+Do you think your number is higher or lower than the computer's?: lower
+You were right! The computer's number was 79
+"""
+
+import random
+#  random module ko import kar rahe hain jo humein random numbers generate karne ki sahulat deta hai.
+
+def play_high_low():
+#  play_high_low() function define kiya gaya hai jo game ka main logic handle karega.
+
+    print("Welcome to the High-Low Game!")
+    print("--------------------------------")
+    # Game ka welcome message print ho raha hai taake output achha lage.
+    
+    computer_number = random.randint(1, 100)
+    user_number = random.randint(1, 100)
+    #  computer_number aur user_number dono 1 se 100 tak ke random numbers assign kar raha hai.
+    
+    print(f"The computer's number is {computer_number}")
+    print(f"Your number is {user_number}")
+    #  f-string ka use karke computer aur user ke numbers ko dynamically print ho rahe hain.
+    
+    guess = input("Do you think your number is higher or lower than the computer's?: ").strip().lower()
+    #  input() function se user ka guess (higher/lower) liya ja raha hai.
+    # .strip().lower() use kiya gaya hai taake extra spaces remove ho jayein aur input lowercase mein convert ho.
+
+    if (guess == "higher" and user_number > computer_number) or (guess == "lower" and user_number < computer_number):
+        print(f"You were right! The computer's number was {computer_number}")
+    else:
+        print(f"You were wrong. The computer's number was {computer_number}")
+        # Condition Check:
+        # Agar user ne "higher" guess kiya aur user_number > computer_number hai, toh sahi jawab.
+        # Agar user ne "lower" guess kiya aur user_number < computer_number hai, toh sahi jawab.
+        # Agar guess galat hai, toh "You were wrong." print hoga.
+
+if __name__ == "__main__":
+    play_high_low()

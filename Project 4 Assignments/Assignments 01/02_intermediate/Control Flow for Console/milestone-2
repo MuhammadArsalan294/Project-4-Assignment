@@ -1,0 +1,39 @@
+
+"""
+Milestone #2: Get the user choice
+Get user input for their choice of whether they think their number is higher or lower than the computer's number.
+
+Welcome to the High-Low Game!
+--------------------------------
+The computer's number is 7
+Your number is 17
+Do you think your number is higher or lower than the computer's?: higher
+
+"""
+
+import random
+#  random module ko import kiya jata hai taake hum random numbers generate kar sakein.
+
+def play_high_low():
+# play_high_low() function define kiya gaya hai jo game ka main logic handle karega.
+# Jab yeh function call hoga, tab game start hogi.
+
+    print("Welcome to the High-Low Game!")
+    print("--------------------------------")
+    #  Simple welcome message aur ek separator line print ho rahi hai taake output clean lage.
+    
+    computer_number = random.randint(1, 100)
+    user_number = random.randint(1, 100)
+    # computer_number aur user_number dono 1 se 100 tak ke random numbers assign kar raha hai.
+    
+    print(f"The computer's number is {computer_number}")
+    print(f"Your number is {user_number}")
+    #  f-string ka use karke computer aur user ke numbers dynamically print ho rahe hain.
+    
+    guess = input("Do you think your number is higher or lower than the computer's?: ").strip().lower()
+    #  input() function se user se ek guess mangwa rahe hain.
+    # .strip() → Yeh remove karega extra spaces jo user accidentally enter kare.
+    # .lower() → Yeh ensure karega ke user ka input lowercase mein convert ho jaye (taake case sensitivity na ho).
+
+if __name__ == "__main__":
+    play_high_low()

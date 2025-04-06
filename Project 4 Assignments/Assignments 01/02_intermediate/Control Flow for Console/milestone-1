@@ -1,0 +1,37 @@
+
+"""
+Milestone #1: Generate the random numbers
+Generate the random numbers for you and the computer. For now, print both of them out to help you test the logic in later milestones.
+
+Welcome to the High-Low Game!
+--------------------------------
+The computer's number is 23
+Your number is 82
+"""
+
+import random
+#  random module ko import kar rahe hain, jo humein random numbers generate karne ki sahulat deta hai.
+
+def play_high_low():
+# Yeh function define kar raha hai jiska naam play_high_low() hai.
+# Jab bhi yeh function call hoga, yeh game ka logic execute karega.
+
+    print("Welcome to the High-Low Game!")
+    print("--------------------------------")
+    # Sirf game ka welcome message aur ek separator line print kar raha hai.
+    # Yeh output ko readable aur structured banata hai.
+    
+    computer_number = random.randint(1, 100)
+    user_number = random.randint(1, 100)
+    # random.randint(1, 100) function 1 se 100 tak ka ek random number generate karta hai.
+    # computer_number me computer ka number store hota hai.
+    # user_number me user ka number store hota hai.
+    
+    print(f"The computer's number is {computer_number}")
+    print(f"Your number is {user_number}")
+    #  f-string ka use karke computer aur user ke numbers ko print kar rahe hain.
+    # {computer_number} aur {user_number} dynamically update hote hain har execution pe.
+
+if __name__ == "__main__":
+    play_high_low()
+    # Agar yeh script directly run ho rahi ho, toh play_high_low() function automatically call ho jayega.
